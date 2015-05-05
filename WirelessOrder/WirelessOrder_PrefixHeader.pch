@@ -1,0 +1,55 @@
+//
+//  WirelessOrder_PrefixHeader.pch
+//  WirelessOrder
+//
+//  Created by eteng on 14/12/17.
+//  Copyright (c) 2014年 etenginfo. All rights reserved.
+//
+
+#ifndef WirelessOrder_WirelessOrder_PrefixHeader_pch
+#define WirelessOrder_WirelessOrder_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif
+
+//数据库地址
+#define DATABASE_PATH [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0]stringByAppendingString:@"/wirelessorder.sqlite"]
+
+//自定义plst文件路径
+#define ColumnDataPath [[NSBundle mainBundle] pathForResource:@"ColumnDataList" ofType:@"plist"]
+
+//获取设备的物理高度
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+
+//获取设备的物理宽度
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+
+//判断是否为空
+#define checkNull(__X__)        (__X__) == [NSNull null] || (__X__) == nil ? @"" : [NSString stringWithFormat:@"%@", (__X__)]
+
+//显示系统网络标示
+#define showNetLogoYES [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES]
+
+//隐藏系统网络标示
+#define showNetLogoNO [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO]
+
+//颜色值转换
+#define kUIColorFromRGB(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+//接口地址
+#define HttpUrl @"http://222.86.191.71:8080/cms/webservice/rest/lfAppService/"
+//#define HttpUrl @"http://192.168.0.129:8080/cms/webservice/rest/lfAppService/"
+
+//tableViewCellIdentifier
+#define TableViewCellIdentifier @"tableViewCellIdentifier"
+
+//用户数据
+#define UserData [NSUserDefaults standardUserDefaults]
+
+//加载图片
+#define ImageNamed(_pointer) [UIImage imageNamed:_pointer]
